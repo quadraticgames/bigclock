@@ -1,0 +1,175 @@
+#root {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.clock-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 3rem 5rem;
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 0.3s ease;
+}
+
+.clock-container:hover {
+  transform: scale(1.02);
+}
+
+.time-display {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* font-size: 8rem; Removed to allow dynamic sizing */
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: baseline;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.separator {
+  margin: 0 0.5rem;
+  opacity: 0.8;
+  animation: blink 1s infinite;
+}
+
+.ampm {
+  font-size: 2rem;
+  margin-left: 1rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.toggle-btn {
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  border: none;
+  border-radius: 50px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.toggle-btn:active {
+  transform: translateY(1px);
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@media (max-width: 768px) {
+  /* .time-display {
+    font-size: 4rem; Handled by dynamic classes now
+  } */
+
+  .clock-container {
+    padding: 2rem;
+  }
+
+  /* Adjust sizes for mobile if they are too big */
+  .font-xl .time-display {
+    font-size: 8rem;
+  }
+
+  .font-large .time-display {
+    font-size: 6rem;
+  }
+
+  .font-normal .time-display {
+    font-size: 4rem;
+  }
+
+  .font-small .time-display {
+    font-size: 2rem;
+  }
+}
+
+/* Font Sizes - using vw for responsiveness */
+.font-small .time-display {
+  font-size: 8vw;
+}
+
+.font-normal .time-display {
+  font-size: 14vw;
+}
+
+.font-large .time-display {
+  font-size: 20vw;
+}
+
+.font-xl .time-display {
+  font-size: 26vw;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.size-controls {
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(5px);
+}
+
+.size-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.size-btn:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.size-btn.active {
+  background: white;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
