@@ -2,6 +2,8 @@
 
 A simple, large digital clock designed for time management during presentations, classes, or personal work sessions.
 
+![Demo Image](etc/demo.png)
+
 ## Features
 
 - **Flexible Time Formats**: Toggle between 12-hour and 24-hour display modes.
