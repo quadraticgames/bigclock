@@ -10,7 +10,6 @@ function App() {
     { id: 'small', label: 'Small' },
     { id: 'normal', label: 'Normal' },
     { id: 'large', label: 'Large' },
-    { id: 'xl', label: 'XL' },
   ]
 
   return (
